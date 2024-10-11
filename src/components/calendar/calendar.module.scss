@@ -1,0 +1,140 @@
+$arrowIcon: url("../../assets/icons/select-arrow.svg");
+$arrow-vertical-padding: 6px;
+$arrow-horizontal-padding: 12px;
+
+.header {
+  height: 32px;
+  font-size: 0.875rem;
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+
+  .selectBox {
+    position: relative;
+    display: flex;
+    justify-items: center;
+
+    .select {
+      -webkit-appearance: none;
+      background: $arrowIcon no-repeat;
+      background-position: right calc(5px + #{$arrow-horizontal-padding}) top 50%;
+      display: inline-block;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      color: var(--label-month-date-picker);
+      @media only screen and (max-width:1440px){
+        background-position: right 5px top 50%;
+      }
+    }
+  }
+
+  .monthSelectBox {
+    width: 117px;
+    padding: $arrow-vertical-padding $arrow-horizontal-padding;
+    @media only screen and (max-width:1440px){
+      width: 95px;
+      padding:$arrow-vertical-padding $arrow-vertical-padding;
+      padding-right: 10px;
+    }
+  }
+
+  .yearSelectBox {
+    width: 82px;
+    padding: $arrow-vertical-padding $arrow-horizontal-padding;
+    @media only screen and (max-width:1440px){
+      width: 70px;
+      padding:$arrow-vertical-padding $arrow-vertical-padding
+    }
+  }
+
+  .action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    button {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media only screen and (max-width:1440px){
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+  }
+}
+
+.timeInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0 8px 24px;
+  line-height: 40px;
+
+  .inputGroup {
+    width: 92px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 16px;
+    align-items: center;
+    background-color: #eef0f2;
+    border: 1px solid #e7e7ed;
+    border-radius: 4px;
+
+    input {
+      background-color: inherit;
+      color: #6b6c7e;
+      width: 46px;
+      height: 21px;
+      outline: none;
+    }
+
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      background: none;
+      display: none;
+    }
+    input[type="time"]::-webkit-datetime-edit-ampm-field {
+      display: none;
+    }
+
+    .buttonGroup {
+      display: flex;
+      flex-direction: column;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14px;
+        height: 12px;
+        background-color: white;
+      }
+
+      .buttonTimeUp {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+
+      .buttonTimeDown {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+
+  .timezone {
+    color: #868e9b;
+  }
+}
+.option{
+  background: var(--bg-date-picker);
+}
